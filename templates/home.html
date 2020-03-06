@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+{% block head %}
+{{super()}}
+<style>
+h1 {text-align:center;}
+p {margin: 5px 0; padding: 5px; border: 2px solid #999; }
+p {background-color:LightGray; }
+</style>
+{% endblock %}
+{%block body%}
+
+<h1>Testing Website</h1>
+
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque id gravida quam. Curabitur sed dapibus dui. </p>
+
+<form method="POST" action="">
+
+<p>
+    <H2>Enter details </H2> <br>
+    Name <input type = "text" name= "name" /> <br>
+    Number <input type = "text" name = "number" /> <br>
+    Colour <input type = "text" name = "colour" /> <br>
+    <input type = "submit">
+</p>
+</form>
+
+
+<p>
+    {% for item in info %}
+    <tr>
+        <td>{{item[0]}},</td>
+        <td>{{item[1]}},</td>
+        <td>{{item[2]}},</td>
+        <td>{{item[3]}},</td>
+        <br>
+    </tr>
+    {% endfor %}
+</p>
+<br>
+{% for i in info1 %}
+    <li><a>{{ i[1] }}</a></li>
+{%endfor%}
+{%endblock%}
